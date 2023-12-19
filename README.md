@@ -1,16 +1,10 @@
-# Fresh project
+# Adrian Covarrubias
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+Personal website for portfolio, blog and random stuff.
 
-### Usage
+You can reach out to me at adriancova.95@gmail.com
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+Website built with (Deno)[https://deno.com] (fresh)[https://fresh.deno.dev].
 
-Then start the project:
-
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+Styled with (Tailwind)[https://tailwindcss.com/] and
+(DaisyUI)[https://daisyui.com/].
