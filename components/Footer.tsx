@@ -5,7 +5,7 @@ const Footer = () => {
         <p>AdrianCova &copy; 2023</p>
         <div class="grid grid-flow-col gap-4">
           <a
-            href="https://github.com/adriancova"
+            href="https://github.com/adriancova/me"
             target="_blank"
             rel="noopener noreferrer"
           >
