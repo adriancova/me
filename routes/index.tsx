@@ -18,7 +18,7 @@ export default function Home() {
 
         <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center mt-24">
           <h2 class="text-white text-2xl font-bold">
-            Welcome to my website.
+            Welcome to my website
           </h2>
           <ToDo />
         </div>
