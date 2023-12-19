@@ -30,5 +30,6 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "adriancova"
-          entrypoint: "main.js"
-          root: "./_fresh"
+          entrypoint: "main.ts"
+          root: "."
+          exclude: "node_modules"
