@@ -15,9 +15,11 @@ const myTasks = [
 
 const ToDo = () => {
   const todos = useSignal(myTasks);
+  const error = useSignal("");
   const moreToDo = useSignal("");
 
-  const handleChange = (e: Event) => {
+  const handleInput = (e: Event) => {
+    error.value = "";
     moreToDo.value = (e.target as HTMLInputElement).value;
   };
 
@@ -28,6 +30,11 @@ const ToDo = () => {
 
   const handleAdd = (e: Event) => {
     e.preventDefault();
+    if (moreToDo.value === "") {
+      error.value = "If the task is empty is it really a task?";
+      return;
+    }
+    error.value = "";
     todos.value = [...todos.value, moreToDo.value];
     moreToDo.value = "";
   };
@@ -56,16 +63,19 @@ const ToDo = () => {
         ))}
       </ul>
 
-      <form class="text-white flex" onSubmit={handleAdd}>
-        <input
-          class="input input-primary"
-          placeholder="One more thing to do..."
-          value={moreToDo}
-          onChange={handleChange}
-        />
-        <button type="submit" class="btn btn-primary ml-2">
-          Add
-        </button>
+      <form class="text-white flex flex-col items-center" onSubmit={handleAdd}>
+        <div>
+          <input
+            class="input input-primary"
+            placeholder="One more thing to do..."
+            value={moreToDo}
+            onInput={handleInput}
+          />
+          <button type="submit" class="btn btn-primary ml-2">
+            Add
+          </button>
+        </div>
+        {error.value && <p class="text-red-500 text-sm mt-2">{error.value}</p>}
       </form>
     </>
   );
