@@ -1,4 +1,10 @@
 import { type PageProps } from "$fresh/server.ts";
+const gTagScript = `
+window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0FZ0XEZG7W');`;
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -33,6 +39,12 @@ export default function App({ Component }: PageProps) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/styles.css" />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0FZ0XEZG7W"
+        >
+        </script>
+        <script dangerouslySetInnerHTML={{ __html: gTagScript }} />
       </head>
       <body>
         <Component />
